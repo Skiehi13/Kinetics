@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Coordinates in Cannabis Cultivation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Basic Reaction Coordinate Diagram -->
+        <div class="slide active" id="slide-1" data-slide="1">
+            <div class="slide-header">
+                <h1>Basic Reaction Coordinate Diagram</h1>
+                <h2>CH₃Br Bond Dissociation Reaction</h2>
+            </div>
+            <div class="slide-content">
+                <div class="diagram-container">
+                    <svg class="reaction-diagram" viewBox="0 0 600 400">
+                        <!-- Axes -->
+                        <line x1="50" y1="350" x2="550" y2="350" stroke="var(--color-text)" stroke-width="2"/>
+                        <line x1="50" y1="350" x2="50" y2="50" stroke="var(--color-text)" stroke-width="2"/>
+                        
+                        <!-- Axis Labels -->
+                        <text x="300" y="380" text-anchor="middle" fill="var(--color-text)" font-size="16" font-weight="600">Reaction Progress</text>
+                        <text x="25" y="200" text-anchor="middle" fill="var(--color-text)" font-size="16" font-weight="600" transform="rotate(-90 25 200)">Energy</text>
+                        
+                        <!-- Reaction Curve -->
+                        <path d="M 80 280 Q 150 250 220 200 Q 280 100 340 120 Q 400 140 460 200 Q 500 240 520 260" 
+                              stroke="var(--color-primary)" stroke-width="4" fill="none"/>
+                        
+                        <!-- Points -->
+                        <circle cx="100" cy="270" r="6" fill="var(--color-error)"/>
+                        <circle cx="300" cy="110" r="6" fill="var(--color-warning)"/>
+                        <circle cx="480" cy="210" r="6" fill="var(--color-success)"/>
+                        
+                        <!-- Point Labels -->
+                        <text x="100" y="295" text-anchor="middle" fill="var(--color-text)" font-size="14" font-weight="600">A</text>
+                        <text x="300" y="95" text-anchor="middle" fill="var(--color-text)" font-size="14" font-weight="600">C</text>
+                        <text x="480" y="235" text-anchor="middle" fill="var(--color-text)" font-size="14" font-weight="600">B</text>
+                        
+                        <!-- Activation Energy Arrow (D) -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="var(--color-text)"/>
+                            </marker>
+                        </defs>
+                        <line x1="100" y1="270" x2="100" y2="120" stroke="var(--color-text)" stroke-width="3" marker-end="url(#arrowhead)" stroke-dasharray="8,4"/>
+                        <text x="85" y="195" text-anchor="middle" fill="var(--color-text)" font-size="13" font-weight="600" transform="rotate(-90 85 195)">D</text>
+                        
+                        <!-- Enthalpy Change Arrow (E) -->
+                        <line x1="100" y1="270" x2="100" y2="220" stroke="var(--color-text)" stroke-width="3" marker-end="url(#arrowhead)" stroke-dasharray="6,3"/>
+                        <line x1="480" y1="210" x2="480" y2="220" stroke="var(--color-text)" stroke-width="3"/>
+                        <line x1="100" y1="220" x2="480" y2="220" stroke="var(--color-text)" stroke-width="2" stroke-dasharray="4,4"/>
+                        <text x="290" y="235" text-anchor="middle" fill="var(--color-text)" font-size="13" font-weight="600">E</text>
+                        
+                        <!-- Chemical Formulas -->
+                        <text x="100" y="320" text-anchor="middle" fill="var(--color-text)" font-size="14" font-weight="600">CH₃Br</text>
+                        <text x="300" y="85" text-anchor="middle" fill="var(--color-text)" font-size="12" font-weight="600">Transition State</text>
+                        <text x="480" y="250" text-anchor="middle" fill="var(--color-text)" font-size="14" font-weight="600">CH₃• + Br•</text>
+                    </svg>
+                </div>
+                <div class="description">
+                    <p>Reaction coordinate diagrams (RCDs) are fundamental tools in chemistry that visualize the energy changes during chemical reactions (Atkinson et al., 2021). This diagram shows the energy profile for the dissociation of a carbon-bromine bond, where reactants (CH₃Br) start at a lower energy level, rise to a transition state representing the activation energy barrier, and then proceed to products (CH₃• and Br• radicals).</p>
+                    <p>The activation energy (Ea) determines how fast the reaction will occur, while the enthalpy change (ΔH) shows this is an endothermic bond-breaking process (Long, 2024).</p>
+                </div>
+                <div class="legend">
+                    <div class="legend-item"><strong>A:</strong> Reactants (CH₃Br) - Starting materials at lower energy</div>
+                    <div class="legend-item"><strong>B:</strong> Products (CH₃• + Br•) - Final products at higher energy</div>
+                    <div class="legend-item"><strong>C:</strong> Transition State - Highest energy point in reaction</div>
+                    <div class="legend-item"><strong>D:</strong> Activation Energy (Ea) - Energy barrier height</div>
+                    <div class="legend-item"><strong>E:</strong> Enthalpy Change (ΔH) - Overall energy difference</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Catalyst and Heat Effects -->
+        <div class="slide" id="slide-2" data-slide="2">
+            <div class="slide-header">
+                <h1>Effects of Catalysts and Heat on Reaction Coordinates</h1>
+            </div>
+            <div class="slide-content">
+                <div class="diagram-container">
+                    <svg class="reaction-diagram" viewBox="0 0 600 400">
+                        <!-- Axes -->
+                        <line x1="50" y1="350" x2="550" y2="350" stroke="var(--color-text)" stroke-width="2"/>
+                        <line x1="50" y1="350" x2="50" y2="50" stroke="var(--color-text)" stroke-width="2"/>
+                        
+                        <!-- Axis Labels -->
+                        <text x="300" y="380" text-anchor="middle" fill="var(--color-text)" font-size="16" font-weight="600">Reaction Progress</text>
+                        <text x="25" y="200" text-anchor="middle" fill="var(--color-text)" font-size="16" font-weight="600" transform="rotate(-90 25 200)">Energy</text>
+                        
+                        <!-- Original Reaction Curve -->
+                        <path d="M 80 280 Q 150 250 220 200 Q 280 100 340 120 Q 400 140 460 200 Q 500 240 520 260" 
+                              stroke="var(--color-primary)" stroke-width="4" fill="none"/>
+                        
+                        <!-- Catalyst Curve (line a) - Lower activation energy -->
+                        <path d="M 80 280 Q 150 260 220 220 Q 280 160 340 170 Q 400 180 460 200 Q 500 240 520 260" 
+                              stroke="var(--color-success)" stroke-width="4" fill="none" stroke-dasharray="12,6"/>
+                        
+                        <!-- Heat Effect Curve (line b) - Same shape, notation -->
+                        <path d="M 80 250 Q 150 220 220 170 Q 280 70 340 90 Q 400 110 460 170 Q 500 210 520 230" 
+                              stroke="var(--color-warning)" stroke-width="4" fill="none" stroke-dasharray="6,10"/>
+                        
+                        <!-- Labels -->
+                        <text x="420" y="80" fill="var(--color-primary)" font-size="14" font-weight="600">Original</text>
+                        <text x="420" y="130" fill="var(--color-success)" font-size="14" font-weight="600">a: With Catalyst</text>
+                        <text x="420" y="60" fill="var(--color-warning)" font-size="14" font-weight="600">b: With Heat (+30°C)</text>
+                    </svg>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-section">
+                        <h3>Catalyst Effect (Line a)</h3>
+                        <p>The catalyst dramatically increases the reaction rate by lowering the activation energy barrier from the original height to a much lower peak (Long, 2024). This allows many more CH₃Br molecules to have sufficient energy to undergo bond dissociation at room temperature. The reaction proceeds faster because the energy requirement is reduced through an alternative reaction pathway provided by the catalyst (Levell & Liu, 2024).</p>
+                    </div>
+                    
+                    <div class="explanation-section">
+                        <h3>Heat Effect (Line b)</h3>
+                        <p>Adding heat (+30°C) also increases the reaction rate, but through a different mechanism. Heat increases the average kinetic energy of CH₃Br molecules, giving more molecules the energy needed to overcome the original activation barrier (Long, 2024). The energy levels on the diagram remain unchanged, but more molecules possess the kinetic energy to reach the transition state.</p>
+                    </div>
+                    
+                    <div class="explanation-section">
+                        <h3>Combined Impact</h3>
+                        <p>Both effects accelerate the reaction significantly - the catalyst by lowering the energy requirement, and heat by increasing molecular energy. The catalyst effect is typically more dramatic than moderate temperature increases, as it fundamentally changes the reaction mechanism rather than just increasing molecular motion (Levell & Liu, 2024).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Cannabis Application -->
+        <div class="slide" id="slide-3" data-slide="3">
+            <div class="slide-header">
+                <h1>Application to Cannabis Cultivation: THCA Decarboxylation</h1>
+            </div>
+            <div class="slide-content slide3-content">
+                <div class="intro-section">
+                    <h3>Introduction</h3>
+                    <p>Reaction coordinate diagrams are fundamental tools in chemistry that illustrate the energy changes during chemical reactions (Atkinson et al., 2021). These diagrams plot energy versus reaction progress, showing how reactants overcome activation energy barriers to form products. Understanding these concepts is crucial for predicting and controlling chemical reactions in cannabis cultivation and processing.</p>
+                </div>
+                
+                <div class="reaction-section">
+                    <h3>The Decarboxylation Reaction</h3>
+                    <div class="reaction-equation">
+                        <p><strong>THCA → THC + CO₂ (Decarboxylation)</strong></p>
+                    </div>
+                    <div class="importance-points">
+                        <h4>Why This Matters for Cannabis Cultivation:</h4>
+                        <div class="importance-grid">
+                            <div class="importance-card">
+                                <h5>Essential Processing Step</h5>
+                                <p>Raw cannabis contains THCA (non-psychoactive) which must convert to THC (psychoactive) through heat application (Wang et al., 2016)</p>
+                            </div>
+                            <div class="importance-card">
+                                <h5>Well-Studied Kinetics</h5>
+                                <p>Activation energy = 88 kJ/mol, following predictable first-order kinetics (Wang et al., 2016; Filer, 2022)</p>
+                            </div>
+                            <div class="importance-card">
+                                <h5>Temperature Dependent</h5>
+                                <p>Optimal decarboxylation occurs at 220-250°F (104-121°C) (Moreno et al., 2020)</p>
+                            </div>
+                            <div class="importance-card">
+                                <h5>Commercial Importance</h5>
+                                <p>Critical for edibles, extracts, and concentrate production (Filer, 2022)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="application-section">
+                    <h4>Application of Reaction Coordinate Principles:</h4>
+                    <div class="application-grid">
+                        <div class="application-item">
+                            <strong>Point A (Reactants):</strong> THCA molecules in raw cannabis flower (Wang et al., 2016)
+                        </div>
+                        <div class="application-item">
+                            <strong>Point C (Transition State):</strong> High-energy intermediate during CO₂ removal (Moreno et al., 2020)
+                        </div>
+                        <div class="application-item">
+                            <strong>Point B (Products):</strong> THC + CO₂ (endothermic reaction) (Wang et al., 2016)
+                        </div>
+                        <div class="application-item">
+                            <strong>Line 'a' (Catalyst Effect):</strong> Natural acids in cannabis trichomes and metal surfaces in processing equipment lower the 88 kJ/mol activation barrier (Filer, 2022)
+                        </div>
+                        <div class="application-item">
+                            <strong>Line 'b' (Heat Effect):</strong> +30°C increases molecular kinetic energy, allowing more THCA molecules to overcome the activation barrier (Moreno et al., 2020)
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="impact-section">
+                    <h4>Impact on Cannabis Operations</h4>
+                    <p>This decarboxylation reaction demonstrates how reaction coordinate principles directly control cannabis potency, processing efficiency, and product quality in commercial cultivation and processing operations (Wang et al., 2016; Filer, 2022).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: References -->
+        <div class="slide" id="slide-4" data-slide="4">
+            <div class="slide-header">
+                <h1>References</h1>
+            </div>
+            <div class="slide-content references-content">
+                <div class="references-list">
+                    <div class="reference-item">
+                        Atkinson, M. B., Brady, S. S., Popova, M., Brandriet, A. R., & Pentecost, T. C. (2021). Measuring changes in undergraduate chemistry students' reasoning with reaction coordinate diagrams: A longitudinal, multi-institution study. <em>Journal of Chemical Education</em>, <em>98</em>(4), 1064-1076. https://doi.org/10.1021/acs.jchemed.0c01062
+                    </div>
+                    
+                    <div class="reference-item">
+                        Filer, C. N. (2022). Acidic cannabinoid decarboxylation. <em>ADMET and DMPK</em>, <em>10</em>(3), 239-255. https://doi.org/10.5599/admet.1412
+                    </div>
+                    
+                    <div class="reference-item">
+                        Levell, Z., & Liu, Y. (2024). Activation energies of heterogeneous electrocatalysis: A theoretical perspective. <em>ACS Materials Au</em>, <em>4</em>(2), 143-168. https://doi.org/10.1021/acsmaterialsau.3c00071
+                    </div>
+                    
+                    <div class="reference-item">
+                        Long, B. (2024). Reaction mechanisms and practical applications of activation energy. <em>Journal of Chemical Engineering & Process Technology</em>, <em>15</em>(2), 1-7. https://doi.org/10.35248/2157-7048.24.15.499
+                    </div>
+                    
+                    <div class="reference-item">
+                        Moreno, T., Montanes, F., Tallon, S. J., Fenton, T., & King, J. W. (2020). Cannabinoid decarboxylation: A comparative kinetic study. <em>Industrial & Engineering Chemistry Research</em>, <em>59</em>(46), 20307-20315. https://doi.org/10.1021/acs.iecr.0c03791
+                    </div>
+                    
+                    <div class="reference-item">
+                        Popova, M., & Bretz, S. L. (2018). 'It's only the major product that we care about in organic chemistry': An analysis of students' annotations of reaction coordinate diagrams. <em>Journal of Chemical Education</em>, <em>95</em>(7), 1086-1093. https://doi.org/10.1021/acs.jchemed.8b00153
+                    </div>
+                    
+                    <div class="reference-item">
+                        Wang, M., Wang, Y. H., Avula, B., Radwan, M. M., Wanas, A. S., van Antwerp, J., Parcher, J. F., ElSohly, M. A., & Khan, I. A. (2016). Decarboxylation study of acidic cannabinoids: A novel approach using ultra-high-performance supercritical fluid chromatography/photodiode array-mass spectrometry. <em>Cannabis and Cannabinoid Research</em>, <em>1</em>(1), 262-271. https://doi.org/10.1089/can.2016.0020
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-btn btn-large" id="prevBtn" type="button">← Previous</button>
+            <span class="slide-counter" id="slideCounter">1 / 4</span>
+            <button class="nav-btn btn-large" id="nextBtn" type="button">Next →</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
