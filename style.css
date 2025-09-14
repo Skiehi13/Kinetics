@@ -746,55 +746,6 @@ select.form-control {
   background: var(--color-background);
 }
 
-/* Navigation Controls - Bottom Right Corner */
-.slide-controls {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px 15px;
-    border-radius: 25px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.control-btn {
-    background: var(--color-teal-500);
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    min-width: 80px;
-}
-
-.control-btn:hover {
-    background: var(--color-teal-600);
-    transform: translateY(-1px);
-}
-
-.control-btn:disabled {
-    background: var(--color-gray-300);
-    cursor: not-allowed;
-    transform: none;
-}
-
-.slide-counter {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-slate-700);
-    margin: 0 10px;
-    min-width: 50px;
-    text-align: center;
-}
-
 /* Navigation Styles */
 .slide-nav {
   position: fixed;
