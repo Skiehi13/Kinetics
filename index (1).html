@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Coordinates in Cannabis Cultivation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <button class="nav-btn active" data-slide="0">Title</button>
+            <button class="nav-btn" data-slide="1">Introduction</button>
+            <button class="nav-btn" data-slide="2">Original Analysis</button>
+            <button class="nav-btn" data-slide="3">External Factors</button>
+            <button class="nav-btn" data-slide="4">Cannabis Applications</button>
+            <button class="nav-btn" data-slide="5">THCA Reaction Diagram</button>
+            <button class="nav-btn" data-slide="6">References</button>
+        </nav>
+
+        <!-- Slide 0: Title -->
+        <div class="slide active" id="slide-0">
+            <div class="slide-content">
+                <div class="title-slide">
+                    <div class="course-header">
+                        <h3>Chem 103-02, Chemistry II</h3>
+                        <h4>By Amanda Mallette</h4>
+                    </div>
+                    <h1>Cannabis Cultivation Project</h1>
+                    <h2>Reaction Coordinates and External Factors</h2>
+                    <p class="subtitle">Understanding Chemical Transformations in Cannabis Processing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 1: Introduction -->
+        <div class="slide" id="slide-1">
+            <div class="slide-content">
+                <h1>Introduction to Reaction Coordinates</h1>
+                <div class="content-card">
+                    <p>In cannabis cultivation and processing, understanding reaction coordinates provides crucial insights into optimizing chemical transformations. A reaction coordinate represents the progress of a chemical reaction from reactants to products, showing the energy changes that occur during molecular rearrangements.</p>
+                    
+                    <div class="key-concepts">
+                        <h3>Key Concepts:</h3>
+                        <ul>
+                            <li><strong>Activation Energy (E<sub>a</sub>):</strong> The minimum energy required for a reaction to proceed</li>
+                            <li><strong>Transition State:</strong> The highest energy point along the reaction pathway</li>
+                            <li><strong>Reaction Progress:</strong> The extent to which reactants have been converted to products</li>
+                            <li><strong>Energy Profile:</strong> Visual representation of energy changes throughout the reaction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Original Reaction Analysis -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <h1>Original Reaction Analysis</h1>
+                <div class="reaction-info">
+                    <h3>CH₃Br + Nu⁻ → CH₃Nu + Br⁻ (S<sub>N</sub>2 Mechanism)</h3>
+                    <p>This nucleophilic substitution reaction serves as our model system for understanding reaction coordinate principles.</p>
+                </div>
+                
+                <div class="diagram-container">
+                    <svg id="reaction-diagram" width="800" height="400" viewBox="0 0 800 400">
+                        <!-- Background grid -->
+                        <defs>
+                            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--color-border)" stroke-width="0.5" opacity="0.3"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)" />
+                        
+                        <!-- Axes -->
+                        <line x1="80" y1="350" x2="720" y2="350" stroke="var(--color-text)" stroke-width="2"/>
+                        <line x1="80" y1="350" x2="80" y2="50" stroke="var(--color-text)" stroke-width="2"/>
+                        
+                        <!-- Axis labels -->
+                        <text x="400" y="380" text-anchor="middle" class="axis-label">Reaction Progress</text>
+                        <text x="30" y="200" text-anchor="middle" class="axis-label" transform="rotate(-90, 30, 200)">Energy (kcal/mol)</text>
+                        
+                        <!-- Normal reaction pathway -->
+                        <path id="normal-pathway" d="M 120 320 Q 200 280 280 250 Q 360 120 400 100 Q 440 120 520 140 Q 600 160 680 290" 
+                              stroke="var(--color-primary)" stroke-width="3" fill="none"/>
+                        
+                        <!-- Catalyzed pathway (line a) - initially hidden -->
+                        <path id="catalyzed-pathway" d="M 120 320 Q 200 270 280 220 Q 360 180 400 170 Q 440 180 520 200 Q 600 220 680 290" 
+                              stroke="var(--color-warning)" stroke-width="3" fill="none" stroke-dasharray="10,5" style="opacity: 0;"/>
+                        
+                        <!-- Temperature effect (line b) - across main diagram -->
+                        <path id="temperature-pathway" d="M 120 310 Q 200 270 280 240 Q 360 110 400 90 Q 440 110 520 130 Q 600 150 680 280" 
+                              stroke="var(--color-error)" stroke-width="3" fill="none" stroke-dasharray="5,10" style="opacity: 0;"/>
+                        
+                        <!-- Reaction points -->
+                        <circle id="point-A" cx="120" cy="320" r="6" fill="var(--color-primary)" class="reaction-point" data-point="A"/>
+                        <circle id="point-D" cx="280" cy="250" r="6" fill="var(--color-primary)" class="reaction-point" data-point="D"/>
+                        <circle id="point-C" cx="400" cy="100" r="6" fill="var(--color-primary)" class="reaction-point" data-point="C"/>
+                        <circle id="point-E" cx="520" cy="140" r="6" fill="var(--color-primary)" class="reaction-point" data-point="E"/>
+                        <circle id="point-B" cx="680" cy="290" r="6" fill="var(--color-primary)" class="reaction-point" data-point="B"/>
+                        
+                        <!-- Point labels -->
+                        <text x="120" y="340" text-anchor="middle" class="point-label">A</text>
+                        <text x="280" y="270" text-anchor="middle" class="point-label">D</text>
+                        <text x="400" y="90" text-anchor="middle" class="point-label">C</text>
+                        <text x="520" y="130" text-anchor="middle" class="point-label">E</text>
+                        <text x="680" y="310" text-anchor="middle" class="point-label">B</text>
+                        
+                        <!-- Activation energy annotation -->
+                        <line x1="120" y1="310" x2="400" y2="310" stroke="var(--color-text-secondary)" stroke-width="1" stroke-dasharray="3,3" style="opacity: 0;" id="ea-line"/>
+                        <text x="260" y="305" text-anchor="middle" class="ea-label" style="opacity: 0;" id="ea-text">E<sub>a</sub></text>
+                    </svg>
+                </div>
+
+                <div class="diagram-controls">
+                    <button id="catalyst-toggle" class="btn btn--outline">Show Catalyst Effect (Line a)</button>
+                    <button id="temperature-toggle" class="btn btn--outline">Show Temperature Effect (Line b)</button>
+                    <button id="activation-toggle" class="btn btn--outline">Show E<sub>a</sub></button>
+                </div>
+
+                <!-- Tooltip for point information -->
+                <div id="point-tooltip" class="tooltip hidden">
+                    <h4 id="tooltip-title"></h4>
+                    <p id="tooltip-content"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: External Factor Effects -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <h1>External Factor Effects</h1>
+                <div class="effects-grid">
+                    <div class="content-card">
+                        <h3>Catalyst Effect (Line a)</h3>
+                        <p>Provides an alternative reaction pathway with lower activation energy. The catalyst:</p>
+                        <ul>
+                            <li>Lowers the energy barrier for the reaction</li>
+                            <li>Increases reaction rate without being consumed</li>
+                            <li>Does not change the overall energy change (ΔG)</li>
+                            <li>Provides a more efficient pathway to products</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Temperature Effect (Line b)</h3>
+                        <p>Increases molecular energy distribution without changing the reaction pathway:</p>
+                        <ul>
+                            <li>Higher temperature increases kinetic energy of molecules</li>
+                            <li>More molecules have sufficient energy to overcome activation barrier</li>
+                            <li>Reaction rate increases exponentially with temperature</li>
+                            <li>Follows Arrhenius equation: <strong>k = Ae<sup>-E<sub>a</sub>/RT</sup></strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Cannabis Applications -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <h1>Cannabis Cultivation Applications</h1>
+                <div class="cannabis-content">
+                    <div class="content-card">
+                        <h3>THCA Decarboxylation Reaction</h3>
+                        <div class="reaction-equation">
+                            <p><strong>THCA → THC + CO₂</strong></p>
+                        </div>
+                        <p>The decarboxylation of tetrahydrocannabinolic acid (THCA) to tetrahydrocannabinol (THC) is a crucial transformation in cannabis processing.</p>
+                    </div>
+
+                    <div class="process-parameters">
+                        <div class="parameter-card">
+                            <h4>Activation Energy (E<sub>a</sub>)</h4>
+                            <p class="value">25-30 kcal/mol</p>
+                        </div>
+                        
+                        <div class="parameter-card">
+                            <h4>Optimal Temperature</h4>
+                            <p class="value">110-130°C</p>
+                        </div>
+                        
+                        <div class="parameter-card">
+                            <h4>Processing Goal</h4>
+                            <p class="value">Maximize THC while preserving terpenes</p>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Process Optimization</h3>
+                        <ul>
+                            <li><strong>Temperature Control:</strong> Precise heating prevents terpene degradation</li>
+                            <li><strong>Time Management:</strong> Optimal duration ensures complete conversion</li>
+                            <li><strong>Atmosphere Control:</strong> Inert environment prevents oxidation</li>
+                            <li><strong>Quality Preservation:</strong> Maintains cannabinoid and terpene profiles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: THCA Decarboxylation Reaction Diagram -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <h1>THCA Decarboxylation Reaction Diagram</h1>
+                <div class="reaction-info">
+                    <h3>THCA → THC + CO₂</h3>
+                    <p>Reaction coordinate diagram showing the decarboxylation process with E<sub>a</sub> = 25-30 kcal/mol</p>
+                </div>
+                
+                <div class="diagram-container">
+                    <svg id="thca-diagram" width="800" height="400" viewBox="0 0 800 400">
+                        <!-- Background grid -->
+                        <defs>
+                            <pattern id="thca-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--color-border)" stroke-width="0.5" opacity="0.3"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#thca-grid)" />
+                        
+                        <!-- Axes -->
+                        <line x1="80" y1="350" x2="720" y2="350" stroke="var(--color-text)" stroke-width="2"/>
+                        <line x1="80" y1="350" x2="80" y2="50" stroke="var(--color-text)" stroke-width="2"/>
+                        
+                        <!-- Axis labels -->
+                        <text x="400" y="380" text-anchor="middle" class="axis-label">Reaction Progress</text>
+                        <text x="30" y="200" text-anchor="middle" class="axis-label" transform="rotate(-90, 30, 200)">Energy (kcal/mol)</text>
+                        
+                        <!-- THCA decarboxylation pathway -->
+                        <path id="thca-pathway" d="M 150 300 Q 300 280 400 120 Q 500 280 650 260" 
+                              stroke="var(--color-success)" stroke-width="4" fill="none"/>
+                        
+                        <!-- Energy levels -->
+                        <line x1="120" y1="300" x2="180" y2="300" stroke="var(--color-text-secondary)" stroke-width="2"/>
+                        <line x1="620" y1="260" x2="680" y2="260" stroke="var(--color-text-secondary)" stroke-width="2"/>
+                        
+                        <!-- Activation energy arrow -->
+                        <path d="M 150 290 L 150 130" stroke="var(--color-error)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        <path d="M 150 300 L 150 290" stroke="var(--color-error)" stroke-width="2"/>
+                        
+                        <!-- Arrow marker definition -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                             refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="var(--color-error)" />
+                            </marker>
+                        </defs>
+                        
+                        <!-- Reaction points -->
+                        <circle cx="150" cy="300" r="8" fill="var(--color-success)" class="thca-point" data-point="THCA"/>
+                        <circle cx="400" cy="120" r="8" fill="var(--color-error)" class="thca-point" data-point="TS"/>
+                        <circle cx="650" cy="260" r="8" fill="var(--color-success)" class="thca-point" data-point="THC"/>
+                        
+                        <!-- Point labels -->
+                        <text x="150" y="325" text-anchor="middle" class="point-label">THCA</text>
+                        <text x="400" y="105" text-anchor="middle" class="point-label">Transition State</text>
+                        <text x="650" y="285" text-anchor="middle" class="point-label">THC + CO₂</text>
+                        
+                        <!-- Energy annotation -->
+                        <text x="170" y="215" class="ea-label">E<sub>a</sub> = 25-30 kcal/mol</text>
+                        
+                        <!-- Temperature annotation -->
+                        <text x="500" y="50" class="temp-label">Optimal: 110-130°C</text>
+                        
+                        <!-- Arrhenius equation -->
+                        <text x="500" y="70" class="equation-label">k = Ae<sup>-E<sub>a</sub>/RT</sup></text>
+                    </svg>
+                </div>
+
+                <div class="thca-info">
+                    <div class="content-card">
+                        <h3>Decarboxylation Process Details</h3>
+                        <ul>
+                            <li><strong>Starting Material:</strong> THCA (non-psychoactive precursor)</li>
+                            <li><strong>Transition State:</strong> Bond breaking and CO₂ formation</li>
+                            <li><strong>Products:</strong> THC (psychoactive) + CO₂ (gas)</li>
+                            <li><strong>Heat Required:</strong> Thermal energy to overcome E<sub>a</sub></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: References -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <h1>References</h1>
+                <div class="references-content">
+                    <div class="content-card">
+                        <h3>Complete Reference List (APA 7 Format)</h3>
+                        <div class="reference-list">
+                            <div class="reference-item">
+                                <p>Anslyn, E. V., & Dougherty, D. A. (2017). <em>Modern physical organic chemistry</em>. University Science Books.</p>
+                            </div>
+                            
+                            <div class="reference-item">
+                                <p>Atkins, P., & de Paula, J. (2018). <em>Atkins' physical chemistry</em> (11th ed.). Oxford University Press.</p>
+                            </div>
+                            
+                            <div class="reference-item">
+                                <p>Bruice, P. Y. (2020). <em>Organic chemistry</em> (8th ed.). Pearson Education.</p>
+                            </div>
+                            
+                            <div class="reference-item">
+                                <p>Clayden, J., Greeves, N., & Warren, S. (2012). <em>Organic chemistry</em> (2nd ed.). Oxford University Press.</p>
+                            </div>
+                            
+                            <div class="reference-item">
+                                <p>Lowry, T. H., & Richardson, K. S. (2021). <em>Mechanism and theory in organic chemistry</em> (3rd ed.). Harper & Row.</p>
+                            </div>
+                            
+                            <div class="reference-item">
+                                <p>Lu, H. C., & Mackie, K. (2016). An introduction to the endogenous cannabinoid system. <em>Biological Psychiatry</em>, <em>79</em>(7), 516-525. https://doi.org/10.1016/j.biopsych.2015.07.028</p>
+                            </div>
+                            
+                            <div class="reference-item">
+                                <p>Russo, E. B. (2011). Taming THC: Potential cannabis synergy and phytocannabinoid-terpenoid entourage effects. <em>British Journal of Pharmacology</em>, <em>163</em>(7), 1344-1364. https://doi.org/10.1111/j.1476-5381.2011.01238.x</p>
+                            </div>
+                            
+                            <div class="reference-item">
+                                <p>Smith, M. B. (2020). <em>March's advanced organic chemistry: Reactions, mechanisms, and structure</em> (8th ed.). Wiley.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation arrows -->
+        <div class="slide-navigation">
+            <button id="prev-slide" class="nav-arrow btn btn--outline" disabled>← Previous</button>
+            <span id="slide-counter">1 / 7</span>
+            <button id="next-slide" class="nav-arrow btn btn--outline">Next →</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
